@@ -32,6 +32,7 @@ module Stickler::Middleware
     # gemcutter push
     post '/api/v1/gems' do
       begin
+        @repo.
         spec = @repo.add( request.body )
         logger.info( "Pushed #{spec.full_name}" )
         return spec.to_s
